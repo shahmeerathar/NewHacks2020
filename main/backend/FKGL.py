@@ -1,7 +1,10 @@
 import nltk
 import syllables
-class audience_appropriateness(FACTOR):
-    def score(text, audience):
+from main.backend.factor import Factor
+
+
+class audience_appropriateness(Factor):
+    def score(self, text: str, audience: str) -> float:
         #defining appropriate FKGL score for each audience level
         desired_scores = {"basic": 70.0,  "intermediate": 55.0, "difficult" : 40.0}
         """the FKGL score is computed using the following equation: 
