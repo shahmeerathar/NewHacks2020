@@ -9,10 +9,27 @@ body{
     overflow: hidden;
     font-family: Serif;
     font-size: 80px;
-    text-align: center;
+    font-weight: bold;
+    text-align: left;
     text-decoration: none;
-    padding: 4% 30% 4% 30%;
+    padding-left: 7%;
     margin: 2% 1% 0% 1%;
+}
+
+
+.row .pagetitle{
+    .pagetitle{
+    color: #577590;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: Serif;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: left;
+    text-decoration: none;
+    margin: 2% 1% 0% 1%;
+}
 }
 a:link, a:hover, a:visited{
     color: inherit;
@@ -22,10 +39,13 @@ a:link, a:hover, a:visited{
     color: #9e2a2b;
     display: block;
     font-size:large;
+    text-align: center;
+    font-weight: bold;
 }
 
 h3{
     font-size:medium;
+    text-align: center;
 }
 
 .form-group label{
@@ -34,4 +54,43 @@ h3{
 
 .container{
     text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.img-fluid{
+    max-width:400%;
+    align-content: right;
+}
+
+.row{
+    flex-wrap:wrap;
+}
+
+.col-sm-10{
+    padding-bottom: 5%;
+}
+
+.col-sm-12{
+    align-content: center;
+    justify-content: center;
+}
+
+.btn btn-primary{
+    align-content: center;
+}
+
+.col-sm-8{
+    padding-left: 5%;
+    padding-right:5%;
+    align-content: center;
+}
+
+.col-sm-4{
+    align-content: center;
+}
+
+form{
+    align-items: center;
 }

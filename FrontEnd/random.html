@@ -9,20 +9,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 </head>
 <header>
-<h1 class="pagetitle"><a href="random.html" style="text-decoration: none"> Shake The Sphere!</a></h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                <img src="shakespeare_drawing-removebg-preview.png" class="img-fluid">
+            </div>
+            <div class="col-sm-10">
+                <h1 class="pagetitle"><a href="random.html" style="text-decoration: none"> Shake The Sphere!</a></h1>
+                <h3>A writing game to make Shakespeare quake in his grave</h3>
+            </div>
+        </div>
+    </div>
 </header>
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-12">
             <h2 class="entertext">Enter Username</h2>
             <h3>Enter a new username or an existing one if you already have one.</h3>
+            <form>
+                <input class="form-control form-control-lg" type="text" placeholder="username">
+                <button type="button" class="btn btn-primary">Enter</button>
+            </form>
         </div>
     </div>
 </div>
-<form>
-    <input class="form-control form-control-lg" type="text" placeholder="username">
-    <button type="button" class="btn btn-primary">Enter</button>
-</form>
 </body>
 </html>
