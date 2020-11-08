@@ -1,7 +1,20 @@
-from .factor import Factor
-import nltk
+import os
+
+from factor import Factor
+from google.cloud import language_v1
+
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'NewHacks-7112876e212f.json'
+client = language_v1.LanguageServiceClient()
 
 
 class Sentiment(Factor):
-    def score(self, n: str, prompt: str) -> float:
-        return 1.0
+    def score(self, n: str, args: list) -> float:
+        # sentiment = args[0]  # Only one argument, neutral or passionate
+        document = language_v1.Document(content=n,
+                                        type_=language_v1.Document.Type.PLAIN_TEXT)
+        annotations = client.analyze_sentiment(request={'document': document})
+        magnitude = annotations.document_sentiment.magnitude
+        if args[0] == 'neutral':
+            return 1 - (magnitude - 0.0)
+        else:
+            return 1 - (1.0 - magnitude)
