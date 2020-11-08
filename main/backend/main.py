@@ -5,15 +5,20 @@
 # Third value is the factor val itself.
 # Returns calculated score.
 
-from factor import Factor
+from FKGL import FKGL
+from sentiment import Sentiment
 
 
-def main(n: str, prompt: str, factors: {str: (int, float, str)}) -> float:
+def main(n: str, source: str, factors: {str: (int, float, str)}) -> float:
     score = 0.0
     for f in factors:
         if factors[f][0] == 1:
-            factor = Factor()
-            arguments = factors[f][2]
+            if f == 'FKGL':
+                factor = FKGL()
+                arguments = factors[f][2]
+            if f == 'sentiment':
+                factor = Sentiment()
+                arguments = factors[f][2]
             score += factor.score(n, arguments) * factors[f][1]
 
 # TODO: Modify factor variable according to factor
