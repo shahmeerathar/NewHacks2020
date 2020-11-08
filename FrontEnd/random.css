@@ -28,6 +28,10 @@ h3{
     font-size:medium;
 }
 
+.form-group label{
+    font-weight:bold;
+}
+
 .container{
     text-align: center;
 }
