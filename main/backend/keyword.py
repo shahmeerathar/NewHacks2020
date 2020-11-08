@@ -3,7 +3,7 @@ import nltk
 import rake_nltk
 
 
-class FKGL(Factor):
+class keyword(Factor):
     def score(self, text: str, args: list) -> float:
         source_text = args[0]
         #checks if this is a rephrasing example
