@@ -9,7 +9,7 @@ from FKGL import FKGL
 from sentiment import Sentiment
 
 
-def main(n: str, source: str, factors: {str: (int, float, str)}) -> float:
+def get_score(n: str, source: str, factors: {str: (int, float, str)}) -> float:
     score = 0.0
     for f in factors:
         if factors[f][0] == 1:
@@ -20,5 +20,11 @@ def main(n: str, source: str, factors: {str: (int, float, str)}) -> float:
                 factor = Sentiment()
                 arguments = factors[f][2]
             score += factor.score(n, arguments) * factors[f][1]
+    return score
+
+
+def main(username: str, n: str, source: str, factors: {str: (int, float, str)}):
+    score = get_score(n, source, factors)
+    # Add to database
 
 # TODO: Modify factor variable according to factor
