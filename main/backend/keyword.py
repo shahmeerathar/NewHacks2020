@@ -1,4 +1,4 @@
-from factor import Factor
+from .factor import Factor
 import nltk
 import rake_nltk
 

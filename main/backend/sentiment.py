@@ -1,9 +1,9 @@
 import os
 
-from factor import Factor
+from .factor import Factor
 from google.cloud import language_v1
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'NewHacks-7112876e212f.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/Users/shahmeerathar/Documents/Computer Science/Hackathons/NewHacks/Project/main/backend/NewHacks-9a3ddc3e13de.json'
 client = language_v1.LanguageServiceClient()
 
 

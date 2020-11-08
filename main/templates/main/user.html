@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Shake the Sphere!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="random.css">
+    <link rel="stylesheet" href="user.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 </head>
@@ -25,19 +25,19 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h2 class="entertext">Enter Room Code</h2>
-            <h3>Enter your desired room code</h3>
-            <form>
-                <input class="form-control form-control-lg" type="text" placeholder="room code">
-            </form>
-        </div>
-        <div class="col-sm-12">
-            <h2 class="entertext">Enter Username</h2>
-            <h3>Enter a new username or an existing one if you already have one.</h3>
-            <form>
-                <input class="form-control form-control-lg" type="text" placeholder="username">
-                <button type="button" class="btn btn-primary">Enter</button>
-            </form>
+        <form action="{% url 'main:submit' %}" method="post">>
+            {% csrf_token %}
+            <h2 class="entertext"> Source Text </h2>
+            <p>A team of physicists at a university in the Netherlands have 3D-printed a microscopic version of the USS Voyager, an Intrepid-class starship from Star Trek. The miniature Voyager, which measures 15 micrometers (0.015 millimeters) long, is part of a project researchers at Leiden University conducted to understand how shape affects the motion and interactions of microswimmers. Microswimmers are small particles that can move through liquid on their own by interacting with their environment through chemical reactions. The platinum coating on the microswimmers reacts to a hydrogen peroxide solution they are placed in, and that propels them through the liquid.<p>
+            <h2 class="entertext">
+            Rewrite the given text but with the following characteristics:
+            30% Audience Approriate-ness: Medium,  30% Neutrality: Neutral, 20% Accuracy, 20% Plagiarism
+            </h2>
+            <input type="text" name = "RoomCode" value="Room Code">
+            <input type="text" name = "Username" value="Username">
+            <input type="text" name = "Answer" value="Submission">
+            <input type="submit" value="Submit">
+        </form>
         </div>
     </div>
 </div>
