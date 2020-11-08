@@ -27,3 +27,7 @@ a:link, a:hover, a:visited{
 h3{
     font-size:medium;
 }
+
+.container{
+    text-align: center;
+}
