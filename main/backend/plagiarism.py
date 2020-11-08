@@ -1,4 +1,4 @@
-from main.backend.factor import Factor
+from factor import Factor
 import nltk
 
 

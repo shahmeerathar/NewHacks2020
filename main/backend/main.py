@@ -5,7 +5,7 @@
 # Third value is the factor val itself.
 # Returns calculated score.
 
-from .factor import Factor
+from factor import Factor
 
 
 def main(n: str, prompt: str, factors: {str: (int, float, str)}) -> float:

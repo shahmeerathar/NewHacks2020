@@ -1,6 +1,6 @@
 import nltk
 import syllables
-from main.backend.factor import Factor
+from factor import Factor
 
 
 class FKGL(Factor):
