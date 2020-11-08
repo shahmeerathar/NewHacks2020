@@ -7,6 +7,8 @@
 
 from FKGL import FKGL
 from sentiment import Sentiment
+from keyword import Keyword
+from plagiarism import Plagiarism
 from main.models import User
 
 
@@ -16,17 +18,21 @@ def get_score(n: str, source: str, factors: {str: (int, float, str)}) -> float:
         if factors[f][0] == 1:
             if f == 'FKGL':
                 factor = FKGL()
-                arguments = factors[f][2]
+                arguments = [factors[f][2]]
             if f == 'sentiment':
                 factor = Sentiment()
-                arguments = factors[f][2]
+                arguments = [factors[f][2]]
+            if f == 'keyword':
+                factor = Keyword()
+                arguments = [source, factors[f][2]]
+            if f == 'plagiarism':
+                factor = Plagiarism()
+                arguments = [source, factors[f][2]]
             score += factor.score(n, arguments) * factors[f][1]
     return score
 
 
-def main(room_code: str, name: str, n: str, source: str, factors: {str: (int, float, str)}):
-    s = get_score(n, source, factors)
+def main(room_code: str, name: str, n: str, source: str):
+    s = get_score(n, source, {'FKGL': (1, 0.3, 'intermediate'), 'sentiment': (1, 0.3, 'neutral'), 'keyword': (1, 0.2, True), 'plagiarism': (1, 0.2, True)})
     user = User(username=name, room=room_code, score=s)
     user.save
-
-# TODO: Modify factor variable according to factor

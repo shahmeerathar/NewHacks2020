@@ -2,7 +2,7 @@ from factor import Factor
 import nltk
 
 
-class keyword(Factor):
+class Plagiarism(Factor):
 
     def _jaccard_similarity(self, source_text: [str], text: [str]) -> float:
         intersection = set(source_text).intersection(set(text))
