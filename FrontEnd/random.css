@@ -1,0 +1,29 @@
+body{
+    background-color: #f6bd60
+}
+
+.pagetitle{
+    color: #577590;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: Serif;
+    font-size: 80px;
+    text-align: center;
+    text-decoration: none;
+    padding: 4% 30% 4% 30%;
+    margin: 2% 1% 0% 1%;
+}
+a:link, a:hover, a:visited{
+    color: inherit;
+}
+
+.entertext{
+    color: #9e2a2b;
+    display: block;
+    font-size:large;
+}
+
+h3{
+    font-size:medium;
+}
