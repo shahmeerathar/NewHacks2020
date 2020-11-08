@@ -7,6 +7,7 @@
 
 from FKGL import FKGL
 from sentiment import Sentiment
+from main.models import User
 
 
 def get_score(n: str, source: str, factors: {str: (int, float, str)}) -> float:
@@ -23,8 +24,9 @@ def get_score(n: str, source: str, factors: {str: (int, float, str)}) -> float:
     return score
 
 
-def main(username: str, n: str, source: str, factors: {str: (int, float, str)}):
-    score = get_score(n, source, factors)
-    # Add to database
+def main(room_code: str, name: str, n: str, source: str, factors: {str: (int, float, str)}):
+    s = get_score(n, source, factors)
+    user = User(username=name, room=room_code, score=s)
+    user.save
 
 # TODO: Modify factor variable according to factor
